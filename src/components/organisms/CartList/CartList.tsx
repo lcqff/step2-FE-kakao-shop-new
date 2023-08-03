@@ -6,7 +6,7 @@ import comma from '@utils/commaUtils';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
-const staticServerUri = process.env.REACT_APP_PATH || '';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 interface CartListProps {
   data: CartProductsQuery;

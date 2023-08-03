@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '@api/loginApi';
 import Card from '@components/atoms/Card';
 import InputGroup from '../molecules/InputGroup';
-const staticServerUri = process.env.REACT_APP_PATH || '';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const LoginForm = () => {
   const navigate = useNavigate();

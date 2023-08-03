@@ -4,7 +4,7 @@ import OptionItem from '@components/atoms/OptionItem';
 import FilledButton from '@components/atoms/button/FilledButton';
 import Card from '@components/atoms/Card';
 import { useNavigate } from 'react-router-dom';
-const staticServerUri = process.env.REACT_APP_PATH || '';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 interface OrderCompleteTemplateProps {
   data: OrderResult;
