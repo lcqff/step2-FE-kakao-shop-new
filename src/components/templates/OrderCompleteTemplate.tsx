@@ -47,7 +47,7 @@ const OrderCompleteTemplate = ({ data }: OrderCompleteTemplateProps) => {
       <div className="flex justify-center mt-10">
         <FilledButton
           onClick={() => {
-            navigate(`/${staticServerUri}`);
+            navigate(`${staticServerUri}/`);
           }}
         >
           쇼핑 계속하기
