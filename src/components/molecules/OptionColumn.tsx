@@ -8,6 +8,7 @@ import comma from '@utils/commaUtils';
 import React, { useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 interface OptionColumnProps {
   product: ProductInfoData;
@@ -130,7 +131,7 @@ const OptionColumn = ({ product }: OptionColumnProps) => {
             <FilledButton
               onClick={() => {
                 addToCart({
-                  onSuccess: () => navigate('/cart'),
+                  onSuccess: () => navigate(`${staticServerUri}/cart`),
                   onError: () => alert('장바구니 담기 실패'),
                 });
               }}

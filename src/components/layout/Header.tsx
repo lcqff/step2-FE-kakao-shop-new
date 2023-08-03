@@ -5,6 +5,7 @@ import { RootState } from 'src/store';
 import { loginStore } from '@store/slices/userSlice';
 import { BsCart, BsPerson, BsBoxArrowInLeft } from 'react-icons/bs';
 import { ReactComponent as HomeIcon } from '@assets/icon/HomeIcon.svg';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const Header = () => {
   const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn);
@@ -15,6 +16,7 @@ const Header = () => {
     dispatch(loginStore({ isLoggedIn: false, email: null }));
   };
 
+
   return (
     <div className="absolute w-screen bg-white shadow-convexWhite">
       <div className="flex justify-end items-center space-x-10 h-header mx-[100px] text-pointPupple">
@@ -24,14 +26,14 @@ const Header = () => {
         <BsCart
           size="25"
           onClick={() => {
-            navigate('/cart');
+            navigate(`${staticServerUri}/cart`);
           }}
         />
         {!isLoggedIn ? (
           <BsPerson
             size="25"
             onClick={() => {
-              navigate('/login');
+              navigate(`${staticServerUri}/login`);
             }}
           />
         ) : (

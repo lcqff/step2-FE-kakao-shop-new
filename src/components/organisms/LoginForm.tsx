@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import login from '@api/loginApi';
 import Card from '@components/atoms/Card';
 import InputGroup from '../molecules/InputGroup';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -20,12 +21,15 @@ const LoginForm = () => {
       password: '',
     },
   });
+
+
+
   const loginReq = () => {
     login({ email: inputInfo.email, password: inputInfo.password })
       .then((res) => {
         dispatch(loginStore({ isLoggedIn: true, email: inputInfo.email }));
         localStorage.setItem('token', res.headers.authorization);
-        navigate('/');
+        navigate(`/${staticServerUri}`);
       })
       .catch((err) => {
         setEmailHT('아이디를 잘못 입력했습니다.');

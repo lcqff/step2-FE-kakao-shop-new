@@ -6,6 +6,7 @@ import comma from '@utils/commaUtils';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 interface CartListProps {
   data: CartProductsQuery;
@@ -82,7 +83,7 @@ const CartList = ({ data }: CartListProps) => {
             // 변경된 개수만 파싱해서 페이로드로 보내준다.
             mutate(updatePayload, {
               onSuccess: () => {
-                navigate('/order');
+                navigate(`${staticServerUri}/order`);
               },
               onError: (error) => {
                 alert('주문 실패');

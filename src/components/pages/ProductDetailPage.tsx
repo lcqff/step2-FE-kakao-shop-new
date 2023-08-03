@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { getProductById } from '@api/productApi';
 import Loader from '@components/atoms/Loader';
 import ProductDetailTemplate from '@components/templates/ProductDetailPage/ProductDetailTemplate';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const ProductDetailPage = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {error && navigate('/404')}
+      {error && navigate(`${staticServerUri}/404`)}
       {product && <ProductDetailTemplate product={product} />}
     </>
   );

@@ -8,6 +8,7 @@ import { checkUsername, checkEmail, checkPassword } from '@utils/validationUtils
 import { useNavigate } from 'react-router-dom';
 import { register } from '@api/registerApi';
 import Card from '@components/atoms/Card';
+const staticServerUri = process.env.REACT_APP_PATH || "";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const RegisterForm = () => {
         .then((res) => {
           console.log(res);
           dispatch(loginStore({ isLoggedIn: true, email: inputInfo.email }));
-          navigate('/');
+          navigate(`/${staticServerUri}`);
         })
         .catch((err) => {
           setEmailHT('이미 존재하는 이메일 입니다.');
