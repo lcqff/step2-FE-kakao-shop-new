@@ -7,10 +7,14 @@ interface ProductInformationColumnProps {
   setIsLoaded?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const ProductInformationColumn = ({ product, setIsLoaded }: ProductInformationColumnProps) => {
-  const { productName, image } = product;
+  const { productName } = product;
   return (
     <div className="w-[500px]">
-      <Photo src={`${process.env.REACT_APP_API_URL}${image}`} alt={productName} setImgLoaded={setIsLoaded} />
+      <Photo
+        src={`${process.env.PUBLIC_URL}/productImages/${product.id}.jpg`}
+        alt={productName}
+        setImgLoaded={setIsLoaded}
+      />
     </div>
   );
 };
