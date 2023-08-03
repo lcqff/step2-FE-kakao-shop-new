@@ -8,6 +8,7 @@ import comma from '@utils/commaUtils';
 import React, { useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+
 const staticServerUri = process.env.REACT_APP_PATH || '';
 
 interface OptionColumnProps {
@@ -89,7 +90,7 @@ const OptionColumn = ({ product }: OptionColumnProps) => {
               />
               <div className="w-full flex justify-between">
                 <span>{option.name}</span>
-                <span className=''>{comma(option.price)}원</span>
+                <span className="">{comma(option.price)}원</span>
               </div>
             </ol>
           ))}

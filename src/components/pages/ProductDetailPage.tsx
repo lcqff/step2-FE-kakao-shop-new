@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { getProductById } from '@api/productApi';
 import Loader from '@components/atoms/Loader';
 import ProductDetailTemplate from '@components/templates/ProductDetailPage/ProductDetailTemplate';
+
 const staticServerUri = process.env.REACT_APP_PATH || '';
 
 const ProductDetailPage = () => {

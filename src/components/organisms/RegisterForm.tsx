@@ -8,6 +8,7 @@ import { checkUsername, checkEmail, checkPassword } from '@utils/validationUtils
 import { useNavigate } from 'react-router-dom';
 import { register } from '@api/registerApi';
 import Card from '@components/atoms/Card';
+
 const staticServerUri = process.env.REACT_APP_PATH || '';
 
 const RegisterForm = () => {
