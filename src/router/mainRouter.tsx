@@ -12,7 +12,7 @@ import PNFPage from '@components/pages/PNFPage';
 import OrderPage from '@components/pages/OrderPage';
 import OrderComplete from '@components/pages/OrderComplete';
 
-const staticServerUri = process.env.REACT_APP_PATH || "";
+const staticServerUri = process.env.REACT_APP_PATH || '';
 
 const mainRouter = () =>
   useRoutes([
