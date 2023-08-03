@@ -15,6 +15,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const [imgLoaded, setImgLoaded] = useState(false);
+  console.log('? ', process.env.PUBLIC_URL);
   const cardComponent = (
     <>
       <div className="mb-5">
@@ -23,7 +24,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <Link to={`${staticServerUri}/product/${product.id}`}>
               <Photo
                 setImgLoaded={setImgLoaded}
-                src={`${staticServerUri}${process.env.PUBLIC_URL}/productImages/${product.id}}`}
+                src={`${process.env.PUBLIC_URL}/productImages/${product.id}`}
                 alt={product.productName}
               />
             </Link>
