@@ -7,6 +7,8 @@ import PriceTag from '@components/atoms/PriceTag';
 import comma from '@utils/commaUtils';
 import ProductCardSkeleton from './ProductCardSkeleton';
 
+const staticServerUri = process.env.REACT_APP_PATH || '';
+
 interface ProductCardProps {
   product: ProductInfoData;
 }
@@ -18,10 +20,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className="mb-5">
         <Card>
           <div className="-mx-7 -my-7">
-            <Link to={`/product/${product.id}`}>
+            <Link to={`${staticServerUri}/product/${product.id}`}>
               <Photo
                 setImgLoaded={setImgLoaded}
-                src={`${process.env.REACT_APP_API_URL}${product.image}`}
+                src={`${staticServerUri}${process.env.PUBLIC_URL}/productImages/${product.id}}`}
                 alt={product.productName}
               />
             </Link>

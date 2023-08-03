@@ -50,7 +50,7 @@ const RegisterForm = () => {
         .then((res) => {
           console.log(res);
           dispatch(loginStore({ isLoggedIn: true, email: inputInfo.email }));
-          navigate(`/${staticServerUri}`);
+          navigate(`${staticServerUri}/`);
         })
         .catch((err) => {
           setEmailHT('이미 존재하는 이메일 입니다.');

@@ -21,7 +21,7 @@ const Header = () => {
     <div className="absolute w-screen bg-white shadow-convexWhite">
       <div className="flex justify-end items-center space-x-10 h-header mx-[100px] text-pointPupple">
         <div className="absolute left-5">
-          <HomeIcon onClick={() => navigate('/')} />
+          <HomeIcon onClick={() => navigate(`${staticServerUri}/`)} />
         </div>
         <BsCart
           size="25"
