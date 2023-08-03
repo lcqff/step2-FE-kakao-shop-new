@@ -28,7 +28,7 @@ const LoginForm = () => {
       .then((res) => {
         dispatch(loginStore({ isLoggedIn: true, email: inputInfo.email }));
         localStorage.setItem('token', res.headers.authorization);
-        navigate(`/${staticServerUri}`);
+        navigate(`${staticServerUri}/`);
       })
       .catch((err) => {
         setEmailHT('아이디를 잘못 입력했습니다.');
