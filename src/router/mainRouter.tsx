@@ -17,7 +17,7 @@ const staticServerUri = process.env.REACT_APP_PATH || "";
 const mainRouter = () =>
   useRoutes([
     {
-      path: `/${staticServerUri}`,
+      path: `${staticServerUri}/`,
       element: <MainLayout />,
       children: [
         {
